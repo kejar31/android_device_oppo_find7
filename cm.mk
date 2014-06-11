@@ -15,8 +15,8 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from bacon device
-$(call inherit-product, device/oneplus/bacon/bacon.mk)
+# Inherit from find7a device
+$(call inherit-product, device/oppo/find7a/find7a.mk)
 
 # Inherit some common CM stuff
 $(call inherit-product, vendor/cm/config/gsm.mk)
@@ -27,18 +27,15 @@ $(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-PRODUCT_NAME := cm_bacon
-PRODUCT_DEVICE := bacon
+PRODUCT_NAME := cm_find7a
+PRODUCT_DEVICE := find7a
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_MODEL := One
 
-PRODUCT_GMS_CLIENTID_BASE := android-oneplus
+PRODUCT_GMS_CLIENTID_BASE := android-find7a
 
-PRODUCT_BRAND := oneplus
-TARGET_VENDOR_PRODUCT_NAME := bacon
-TARGET_VENDOR_DEVICE_NAME := A0001
-PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=A0001 PRODUCT_NAME=bacon
+PRODUCT_BRAND := oppo
+TARGET_VENDOR_PRODUCT_NAME := find7a
+TARGET_VENDOR_DEVICE_NAME := 9007
+PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=9007 PRODUCT_NAME=find7a
 
-# Bacon gets a special boot animation because it's special.
-PRODUCT_BOOTANIMATION := device/oneplus/bacon/bootanimation.zip
-TARGET_CONTINUOUS_SPLASH_ENABLED := true

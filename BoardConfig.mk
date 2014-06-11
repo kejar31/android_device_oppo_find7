@@ -18,32 +18,27 @@
 -include device/oppo/msm8974-common/BoardConfigCommon.mk
 
 # Kernel
-TARGET_KERNEL_CONFIG := cyanogenmod_bacon_defconfig
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=bacon user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3
-BOARD_CUSTOM_BOOTIMG_MK := device/oneplus/bacon/mkbootimg.mk
+TARGET_KERNEL_CONFIG := cyanogenmod_find7_defconfig
+BOARD_CUSTOM_BOOTIMG_MK := device/oppo/find7a/mkbootimg.mk
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/oneplus/bacon/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/oppo/find7a/bluetooth
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
 COMMON_GLOBAL_CFLAGS += -DOPPO_CAMERA_HARDWARE
+
+# Assert
+TARGET_OTA_ASSERT_DEVICE := find7a,X9007,X9006
 
 # Filesystem
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 16777216
 BOARD_CACHEIMAGE_PARTITION_SIZE    := 536870912
 BOARD_PERSISTIMAGE_PARTITION_SIZE  := 33554432
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
-BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 1388314624
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 13271432192 # 13271448576 - 16384 for crypto footer
-BOARD_USERDATAEXTRAIMAGE_PARTITION_SIZE := 59914776576 # 59914792960 - 16384 for crypto footer
-BOARD_USERDATAEXTRAIMAGE_PARTITION_NAME := 64g
+BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 1073741824
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 13747929088 # 13747945472 - 16384 for crypto footer
+#BOARD_USERDATAIMAGE_PARTITION_SIZE := 3221225472
 
-# Recovery
-TARGET_RECOVERY_FSTAB := device/oneplus/bacon/rootdir/etc/fstab.bacon
-
-TARGET_OTA_ASSERT_DEVICE := bacon,A0001
-
-TARGET_WCNSS_MAC_PREFIX := e8bba8
 # inherit from the proprietary version
--include vendor/oneplus/bacon/BoardConfigVendor.mk
+-include vendor/oppo/find7a/BoardConfigVendor.mk

@@ -17,15 +17,12 @@
 # overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay vendor/extra/overlays/phone-1080p
 
-# Haters gonna hate..
-PRODUCT_CHARACTERISTICS := nosdcard
-
 # Ramdisk
 PRODUCT_PACKAGES += \
-    fstab.bacon \
-    init.bacon.rc \
+    fstab.qcom \
+    init.qcom.rc \
     init.qcom.usb.rc \
-    ueventd.bacon.rc
+    ueventd.qcom.rc
 
 # Keylayouts
 PRODUCT_PACKAGES += \
@@ -51,7 +48,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=20
 
 # call the proprietary setup
-$(call inherit-product-if-exists, vendor/oneplus/bacon/bacon-vendor.mk)
+$(call inherit-product-if-exists, vendor/oppo/find7/find7-vendor.mk)
 
 ifneq ($(QCPATH),)
 $(call inherit-product-if-exists, $(QCPATH)/prebuilt_HY11/target/product/msm8974/prebuilt.mk)
